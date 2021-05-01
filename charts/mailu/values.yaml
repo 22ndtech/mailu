@@ -6,6 +6,6 @@ serviceAccount:
 deployment:
   replicas: 1
   minReadySeconds: 3
-  server-namespace: mailu-mailserver
+  servernamespace: mailu-mailserver
   domain: jaackd.com
   imageVersion: 0.0.1
