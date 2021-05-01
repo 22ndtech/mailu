@@ -21,5 +21,7 @@ spec:
       paths:
       - path: "/"
         backend:
-          serviceName: front
-          servicePort: 80
+          service:
+            name: front
+            port:
+              number: 80
