@@ -1,0 +1,11 @@
+# environment defaults internally to development
+# however, consumers can override it using a custom values file.
+environment: development
+serviceAccount:
+  name: mailu
+deployment:
+  replicas: 1
+  minReadySeconds: 3
+  server-namespace: mailu-mailserver
+  domain: jaackd.com
+  imageVersion: 0.0.1
