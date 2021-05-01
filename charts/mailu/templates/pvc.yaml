@@ -4,7 +4,7 @@ metadata:
   name: redis-hdd
   namespace: {{ .Values.deployment.servernamespace }}
   annotations:
-    volume.beta.kubernetes.io/storage-class: "glusterblock-hdd"
+    volume.beta.kubernetes.io/storage-class: "do-block-storage"
 spec:
   accessModes:
     - ReadWriteOnce
@@ -18,10 +18,10 @@ metadata:
   name: mail-storage
   namespace: {{ .Values.deployment.servernamespace }}
   annotations:
-    volume.beta.kubernetes.io/storage-class: "gluster-heketi-hdd"
+    volume.beta.kubernetes.io/storage-class: "do-block-storage"
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
       storage: 100Gi
