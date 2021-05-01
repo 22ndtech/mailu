@@ -2,7 +2,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: redis-hdd
-  namespace: {{ .Values.deployment.server-namespace }}
+  namespace: {{ .Values.deployment.servernamespace }}
   annotations:
     volume.beta.kubernetes.io/storage-class: "glusterblock-hdd"
 spec:
@@ -16,7 +16,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: mail-storage
-  namespace: {{ .Values.deployment.server-namespace }}
+  namespace: {{ .Values.deployment.servernamespace }}
   annotations:
     volume.beta.kubernetes.io/storage-class: "gluster-heketi-hdd"
 spec:

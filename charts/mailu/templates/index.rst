@@ -36,7 +36,7 @@ The ``Cert-manager`` is quite easy to deploy using Helm when reading the
 ``ClusterIssuer`` which takes care of all required certificates through
 ``Ingress`` items. We chose to provide a ``clusterIssuer`` so you can provide SSL certificates
 for other namespaces (different websites/services), if you don't need this option, you can easily change this by
-changing ``clusterIssuer`` to ``Issuer`` and adding the ``namespace: {{ .Values.deployment.server-namespace }}`` to the metadata.
+changing ``clusterIssuer`` to ``Issuer`` and adding the ``namespace: {{ .Values.deployment.servernamespace }}`` to the metadata.
 An example of a production and a staging ``clusterIssuer``:
 
 .. code:: yaml
@@ -82,7 +82,7 @@ below need to be run from this subdirectory
 Personalization
 ~~~~~~~~~~~~~~~
 
--  All services run in the same namespace, currently ``{{ .Values.deployment.server-namespace }}``. So if you want to use a different one, change the ``namespace`` value in **every** file
+-  All services run in the same namespace, currently ``{{ .Values.deployment.servernamespace }}``. So if you want to use a different one, change the ``namespace`` value in **every** file
 -  Check the ``storage-class`` field in the ``pvc.yaml`` file, you can also change the sizes to your liking. Note that you need ``RWX`` (read-write-many) and ``RWO`` (read-write-once) storageclasses.
 -  Check the ``configmap.yaml`` and adapt it to your needs. Be sure to check the kubernetes DNS values at the end (if you use a different namespace)
 -  Check the ``ingress.yaml`` file and change it to the domain you want (this is for the kubernetes ingress controller to handle the admin, webmail, webdav and auth connections)
@@ -130,8 +130,8 @@ To create the admin user account manually, enter the main ``admin`` pod:
 
 .. code-block:: bash
 
-    kubectl -n {{ .Values.deployment.server-namespace }} get po
-    kubectl -n {{ .Values.deployment.server-namespace }} exec -it mailu-admin-.... /bin/sh
+    kubectl -n {{ .Values.deployment.servernamespace }} get po
+    kubectl -n {{ .Values.deployment.servernamespace }} exec -it mailu-admin-.... /bin/sh
 
 And in the pod run the following command. The command uses following entries:
 
@@ -161,8 +161,8 @@ Enter the dovecot pod:
 
 .. code:: bash
 
-    kubectl -n {{ .Values.deployment.server-namespace }} get po
-    kubectl -n {{ .Values.deployment.server-namespace }} exec -it mailu-imap-.... /bin/sh
+    kubectl -n {{ .Values.deployment.servernamespace }} get po
+    kubectl -n {{ .Values.deployment.servernamespace }} exec -it mailu-imap-.... /bin/sh
 
 Create the file ``overrides/dovecot.conf``
 
@@ -184,7 +184,7 @@ Save and close the file and delete the imap pod to get it recreated.
 
 .. code:: bash
 
-    kubectl -n {{ .Values.deployment.server-namespace }} delete po/mailu-imap-....
+    kubectl -n {{ .Values.deployment.servernamespace }} delete po/mailu-imap-....
 
 Wait for the pod to recreate and you're online!
 Happy mailing!
@@ -201,7 +201,7 @@ This problem can be easily fixed by running following commands:
 
 .. code:: bash
 
-    kubectl -n {{ .Values.deployment.server-namespace }} exec -it mailu-imap-... /bin/sh
+    kubectl -n {{ .Values.deployment.servernamespace }} exec -it mailu-imap-... /bin/sh
     chmod 777 /data/main.db
 
 If the login problem still persists, or more specific, happens now and then and you see some Auth problems on your webmail or mail client, try following steps:
@@ -214,7 +214,7 @@ If the login problem still persists, or more specific, happens now and then and 
 
 .. code:: bash
 
-    kubectl -n {{ .Values.deployment.server-namespace }} get po
-    kubectl -n {{ .Values.deployment.server-namespace }} delete po/mailu-admin...
+    kubectl -n {{ .Values.deployment.servernamespace }} get po
+    kubectl -n {{ .Values.deployment.servernamespace }} delete po/mailu-admin...
 
 Happy mailing!

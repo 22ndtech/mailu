@@ -2,7 +2,7 @@ apiVersion: apps/v1beta2
 kind: DaemonSet
 metadata:
   name: mailu-front
-  namespace: {{ .Values.deployment.server-namespace }}
+  namespace: {{ .Values.deployment.servernamespace }}
   labels:
     k8s-app: mail-loadbalancer
     component: ingress-controller

@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mailu-roundcube
-  namespace: {{ .Values.deployment.server-namespace }}
+  namespace: {{ .Values.deployment.servernamespace }}
 spec:
   replicas: 1
   template:
@@ -41,7 +41,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: webmail
-  namespace: {{ .Values.deployment.server-namespace }}
+  namespace: {{ .Values.deployment.servernamespace }}
   labels:
     app: mailu-roundcube
     role: mail

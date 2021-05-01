@@ -3,7 +3,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: mailu-jaackd-ca
-  namespace: {{ .Values.deployment.server-namespace }}
+  namespace: {{ .Values.deployment.servernamespace }}
 spec:
   secretName: letsencrypt-mailu-staging
   dnsNames:
