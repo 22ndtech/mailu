@@ -7,7 +7,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: imap
+      app: mailu-imap
   template:
     metadata:
       labels:
