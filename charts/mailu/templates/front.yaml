@@ -4,19 +4,19 @@ metadata:
   name: mailu-front
   namespace: {{ .Values.deployment.servernamespace }}
   labels:
-    k8s-app: mail-loadbalancer
+    k8s-app: loadbalancer
     component: ingress-controller
     type: nginx
 spec:
   selector:
     matchLabels:
-      k8s-app: mail-loadbalancer
+      k8s-app: loadbalancer
       component: ingress-controller
       type: nginx
   template:
     metadata:
       labels:
-        k8s-app: mail-loadbalancer
+        k8s-app: loadbalancer
         component: ingress-controller
         type: nginx
     spec:
