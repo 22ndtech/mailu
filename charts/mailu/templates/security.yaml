@@ -11,7 +11,7 @@ spec:
   template:
     metadata:
       labels:
-        app: mailu-security
+        app: antispam
         role: mail
         tier: backend
     spec:
