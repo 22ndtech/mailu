@@ -9,7 +9,7 @@ spec:
   dnsNames:
   - mailu.jaackd.com
   issuerRef:
-    name: letsencrypt
+    name: letsencrypt-staging
     kind: ClusterIssuer
     group: cert-manager.io
   isCA: true
