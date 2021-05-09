@@ -80,12 +80,12 @@ metadata:
   name: antispam
   namespace: {{ .Values.deployment.servernamespace }}
   labels:
-    app: mailu-antispam
+    app: antispam
     role: mail
     tier: backend
 spec:
   selector:
-    app: mailu-security
+    app: antispam
     role: mail
     tier: backend
   ports:
@@ -104,12 +104,12 @@ metadata:
   name: antivirus
   namespace: {{ .Values.deployment.servernamespace }}
   labels:
-    app: mailu-antivirus
+    app: antispam
     role: mail
     tier: backend
 spec:
   selector:
-    app: mailu-security
+    app: antispam
     role: mail
     tier: backend
   ports:

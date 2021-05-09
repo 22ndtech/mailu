@@ -11,7 +11,7 @@ spec:
   template:
     metadata:
       labels:
-        app: admin
+        app: mailu-admin
         role: mail
         tier: backend
     spec:
@@ -52,12 +52,12 @@ metadata:
   name: admin
   namespace: mailu-mailserver
   labels:
-    app: mailu-admin
+    app: admin
     role: mail
     tier: backend
 spec:
   selector:
-    app: mailu-admin
+    app: admin
     role: mail
     tier: backend
   ports:
