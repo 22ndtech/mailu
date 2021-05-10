@@ -5,11 +5,11 @@ metadata:
   name: mailu-jaackd-ca
   namespace: {{ .Values.deployment.servernamespace }}
 spec:
-  secretName: letsencrypt-staging
+  secretName: {{ .Values.deployment.certificateSecret }}
   dnsNames:
   - mailu.jaackd.com
   issuerRef:
-    name: letsencrypt-staging
+    name: {{ .Values.deployment.certificateIssuer }}
     kind: ClusterIssuer
     group: cert-manager.io
   isCA: true
