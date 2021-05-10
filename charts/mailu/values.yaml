@@ -10,3 +10,5 @@ deployment:
   domain: jaackd.com
   imageVersion: 0.0.1
   storageSize: 50Gi
+  certificateSecret: letsencrypt
+  certificateIssuer: letsencrypt
