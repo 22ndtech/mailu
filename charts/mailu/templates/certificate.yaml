@@ -7,7 +7,8 @@ metadata:
 spec:
   secretName: {{ .Values.deployment.certificateSecret }}
   dnsNames:
-  - mailu.jaackd.com
+  - "mail.{{ .Values.deployment.domain }}"
+  - "email.{{ .Values.deployment.domain }}"
   issuerRef:
     name: {{ .Values.deployment.certificateIssuer }}
     kind: ClusterIssuer
