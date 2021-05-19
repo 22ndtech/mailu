@@ -25,6 +25,6 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: front
+            name: mailu-front
             port:
               number: 80
