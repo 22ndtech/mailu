@@ -7,7 +7,6 @@ metadata:
 spec:
   secretName: {{ .Values.deployment.certificateSecret }}
   dnsNames:
-  - "mail.{{ .Values.deployment.domain }}"
   - "email.{{ .Values.deployment.domain }}"
   issuerRef:
     name: {{ .Values.deployment.certificateIssuer }}
