@@ -83,15 +83,15 @@ spec:
           - name: TLS_FLAVOR
             value: cert
           - name: HOSTNAMES
-            value: "mail.example.com,imap.example.com"
+            value: "mail.{{ .Values.deployment.domain }},imap.{{ .Values.deployment.domain }}"
           - name: ADMIN_ADDRESS
-            value: mailu-admin.mailu.svc.cluster.local
+            value: mailu-admin.{{ .Values.deployment.servernamespace }}.svc.cluster.local
           - name: ANTISPAM_WEBUI_ADDRESS
-            value: mailu-rspamd.mailu.svc.cluster.local:11334
+            value: mailu-rspamd.{{ .Values.deployment.servernamespace }}.svc.cluster.local:11334
           - name: WEBMAIL
             value: roundcube
           - name: WEBMAIL_ADDRESS
-            value: mailu-roundcube.mailu.svc.cluster.local
+            value: mailu-roundcube.{{ .Values.deployment.servernamespace }}.svc.cluster.local
           - name: MESSAGE_SIZE_LIMIT
             value: "52428800"
           - name: WEB_WEBMAIL
