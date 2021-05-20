@@ -43,7 +43,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: webmail
+  name: mailu-roundcube
   namespace: {{ .Values.deployment.servernamespace }}
   labels:
     app: mailu-roundcube
