@@ -33,7 +33,7 @@ data:
  DOMAIN: "${MAILU_DOMAIN}"
 
  # Hostnames for this server, separated with comas
- HOSTNAMES: "mail.example.com"
+ HOSTNAMES: "mail.${MAILU_DOMAIN}"
 
  # Postmaster local part (will append the main mail domain)
  POSTMASTER: "admin"
