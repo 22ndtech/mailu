@@ -177,6 +177,6 @@ spec:
                 path: cert.pem
               - key: tls.key
                 path: key.pem
-            secretName: letsencrypt
+            secretName: letsencrypt-mailu-staging
       restartPolicy: Always
       terminationGracePeriodSeconds: 60
